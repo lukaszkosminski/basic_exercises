@@ -1,3 +1,20 @@
+/*
+Stwórz prosty kalkulator, który pobiera od użytkownika (z klawiatury) dwie dowolne liczby oraz symbol działania (+, -, *, /).
+Kalkulator powinien wyświetlić poprawny wynik dla podanych parametrów.
+
+np.:
+Podaj pierwszą liczbę:
+12
+Podaj drugą liczbę:
+4
+Podaj symbol działania (+,-,*,/):
+/
+Wynik działania: 12 / 4 = 3
+
+
+Przetestuj działanie swojego kalkulatora dla różnych operacji matematycznych.
+ */
+
 package org.example.JavaSE;
 
 import java.util.Scanner;
