@@ -8,4 +8,12 @@ public class Pizza {
         this.rozmiar = rozmiar;
         this.typ = typ;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "rozmiar='" + rozmiar + '\'' +
+                ", typ='" + typ + '\'' +
+                '}';
+    }
 }

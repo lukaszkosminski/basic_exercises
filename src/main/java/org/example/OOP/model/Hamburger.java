@@ -14,4 +14,11 @@ public class Hamburger {
     public Hamburger(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Hamburger{" +
+                "size='" + size + '\'' +
+                '}';
+    }
 }

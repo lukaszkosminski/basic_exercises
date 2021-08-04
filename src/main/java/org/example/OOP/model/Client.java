@@ -35,4 +35,13 @@ public class Client {
         this.adres = adres;
         this.telefon = telefon;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "imie='" + imie + '\'' +
+                ", adres='" + adres + '\'' +
+                ", telefon='" + telefon + '\'' +
+                '}';
+    }
 }

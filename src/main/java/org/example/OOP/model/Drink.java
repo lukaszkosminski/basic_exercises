@@ -8,4 +8,12 @@ public class Drink {
         this.drinkType = drinkType;
         this.quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "drinkType=" + drinkType +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
