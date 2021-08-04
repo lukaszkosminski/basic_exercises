@@ -15,11 +15,11 @@ Wynik działania: 12 / 4 = 3
 Przetestuj działanie swojego kalkulatora dla różnych operacji matematycznych.
  */
 
-package org.example.JavaSE;
+package org.example.JavaSE.Ex1;
 
 import java.util.Scanner;
 
-public class Ex2 {
+public class Calc {
 
     public static void main(String[] args) {
         System.out.println("enter first number: ");

@@ -9,11 +9,11 @@ rower - r
 
 Przetestuj działanie dla kilku przykładowych wartości.
  */
-package org.example.JavaSE;
+package org.example.JavaSE.Ex1;
 
 import java.util.Scanner;
 
-public class Ex1 {
+public class FirstLetter {
 
     static String word;
     static char firstLetter;
