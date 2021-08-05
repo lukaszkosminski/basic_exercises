@@ -1,3 +1,44 @@
+/*
+Zaprojektuj aplikację dla małej Pizzerii (obsługa telefonicznych zamówień od klientów).
+
+
+Menu
+
+pizza (mała, średnia, duża) 🍕
+hamburger 🍔
+napoje (cola, sok, piwo) 🍺
+Typ pizzy: Pepperoni, Capricciosa, Hawajska, itp.
+
+
+Zamówienie
+
+klient (imię) / adres / telefon
+rodzaj zamówienia (pizza (rozmiar/typ) / hamburger + napoje)
+Wyobraź sobie teraz taką sytuację:
+
+Dzwoni klient: Mirek z ulicy Łąkowej 2A i zamawia dużą pizzę Pepperoni oraz 2 opakowania soku.
+Dzwoni kolejny klient: Krysia z ulicy Nadrzecznej 6/3 i zamawia małą pizzę Hawajską, średnią Capriciosę oraz colę.
+Dzwoni kolejny klient: Damian z ulicy Polnej 13 i zamawia hamburgera oraz piwo.
+Wprowadź do swojej aplikacji powyższe zamówienia (zakodować w metodzie main, nie trzeba wprowadzać z konsoli).
+
+
+
+Uwagi do rozwiązania:
+
+aplikacja powinna być napisana obiektowo (klasy np. Pizza, Drink, Order, Client itd.),
+przynajmniej jeden rodzaj obiektu powinien być tworzony za pomocą konstruktora,
+w przynajmniej jednej klasie zaimplementuj metody equals() i hashCode(),
+w programie powinna się znaleźć przynajmniej jedna klasa Enum (np. PizzaSize),
+klasy, metody i pola powinny mieć odpowiednie modyfikatory dostępu (public/private).
+Za wykonanie powyższych poleceń można dostać maksymalną liczbę punktów.
+
+
+Dla chętnych:
+
+każde zamówienie zostaje zapisane do pliku w formacie JSON
+ */
+
+
 package org.example.OOP;
 
 import com.google.gson.Gson;
@@ -49,6 +90,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("czy order1 jest taki sam jak order2? :" +order1.equals(order2));
+        System.out.println("hashcode order1: " + order1.hashCode());
+        System.out.println("hashcode order2: " + order2.hashCode());
 
     }
 }
