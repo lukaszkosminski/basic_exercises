@@ -77,7 +77,7 @@ public class Main {
     public static void main(String[] args) {
 
         int[] input = {-3, -2, -1, 0, 1, 2, 3, 4, 5};
-
+        System.out.println(zadanieB(input));
     }
 
     public static int[] sumZadanieA(int[] input) {
@@ -88,8 +88,7 @@ public class Main {
         for (int i = 0; i < input.length; i++) {
             if (input[i] >= 0) {
                 sumaDodatnich = sumaDodatnich + input[i];
-            }
-            else {
+            } else {
                 iloscUjemnych++;
             }
 
@@ -98,4 +97,38 @@ public class Main {
         }
         return Tab;
     }
+
+    public static String zadanieB(int[] input) {
+
+        int iloscElementowujemnych = 0;
+        int iloscElementowDodatnich = 0;
+        int iloscZer = 0;
+        int sumaElementowUjemnych = 0;
+        int sumaElementowdodatnich = 0;
+
+
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] > 0) {
+
+                iloscElementowDodatnich++;
+                sumaElementowdodatnich = input[i] + sumaElementowdodatnich;
+            }
+            if (input[i] < 0) {
+
+                iloscElementowujemnych++;
+                sumaElementowUjemnych = input[i] + sumaElementowUjemnych;
+            }
+            if (input[i] == 0) {
+                iloscZer++;
+
+            }
+
+        }
+        return "{number of negative numbers=" + iloscElementowDodatnich + " " +
+                ", number of positive numbers=" + iloscElementowujemnych + " " +
+                ", number of zeros=" + iloscZer + " " +
+                ", sum of negative numbers=" + sumaElementowUjemnych + " " +
+                ", sum of positive numbers=" + sumaElementowdodatnich + "}";
+    }
+
 }
