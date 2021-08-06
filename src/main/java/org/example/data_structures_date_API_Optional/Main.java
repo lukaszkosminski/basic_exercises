@@ -145,11 +145,11 @@ public class Main {
 
     public static boolean zadanieC(String name) {
         boolean czyZawiera = false;
-        Set<String> simpleLetter2 = new HashSet<>();
+        Set<String> simpleLetter = new HashSet<>();
         for (int i = 0; i < name.length(); i++) {
-            simpleLetter2.add(String.valueOf(name.toLowerCase().charAt(i)));
+            simpleLetter.add(String.valueOf(name.toLowerCase().charAt(i)));
         }
-        if (simpleLetter2.size() == name.length()) {
+        if (simpleLetter.size() == name.length()) {
             czyZawiera = false;
 
         } else {
