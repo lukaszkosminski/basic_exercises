@@ -89,6 +89,8 @@ public class Main {
         //Zadanie C
         System.out.println("Adam" +" "+ zadanieC("Adam"));
         System.out.println("Jan" + " "+ zadanieC("Jan"));
+        //Zadanie D
+
 
     }
 
@@ -144,18 +146,11 @@ public class Main {
     }
 
     public static boolean zadanieC(String name) {
-        boolean czyZawiera = false;
         Set<String> simpleLetter = new HashSet<>();
         for (int i = 0; i < name.length(); i++) {
             simpleLetter.add(String.valueOf(name.toLowerCase().charAt(i)));
         }
-        if (simpleLetter.size() == name.length()) {
-            czyZawiera = false;
-
-        } else {
-            czyZawiera = true;
-        }
-        return czyZawiera;
+        return simpleLetter.size() != name.length();
     }
 }
 
