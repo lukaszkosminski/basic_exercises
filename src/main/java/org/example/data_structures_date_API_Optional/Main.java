@@ -73,14 +73,23 @@ Metoda powinna wykorzystywać Java 8 Optional.
 
 package org.example.data_structures_date_API_Optional;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
 
         int[] input = {-3, -2, -1, 0, 1, 2, 3, 4, 5};
         //Zadanie A
-        System.out.println("{number of positive numbers=" + zadanieA(input)[0] + " , " + "sum of positive numbers=" + zadanieA(input)[1] + "}");
+        System.out.println("{sum of positive numbers=" + zadanieA(input)[0] + " , " + "number of negative numbers=" + zadanieA(input)[1] + "}");
         //Zadanie B
         System.out.println(zadanieB(input));
+        //Zadanie C
+        System.out.println("Adam" +" "+ zadanieC("Adam"));
+        System.out.println("Jan" + " "+ zadanieC("Jan"));
+
     }
 
     public static int[] zadanieA(int[] input) {
@@ -134,4 +143,22 @@ public class Main {
                 ", sum of positive numbers=" + sumaElementowdodatnich + "}";
     }
 
+    public static boolean zadanieC(String name) {
+        boolean czyZawiera = false;
+        Set<String> simpleLetter2 = new HashSet<>();
+        for (int i = 0; i < name.length(); i++) {
+            simpleLetter2.add(String.valueOf(name.toLowerCase().charAt(i)));
+        }
+        if (simpleLetter2.size() == name.length()) {
+            czyZawiera = false;
+
+        } else {
+            czyZawiera = true;
+        }
+        return czyZawiera;
+    }
 }
+
+
+
+
