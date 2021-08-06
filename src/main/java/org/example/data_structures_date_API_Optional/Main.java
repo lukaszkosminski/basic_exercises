@@ -77,10 +77,13 @@ public class Main {
     public static void main(String[] args) {
 
         int[] input = {-3, -2, -1, 0, 1, 2, 3, 4, 5};
+        //Zadanie A
+        System.out.println("{number of positive numbers=" + zadanieA(input)[0] + " , " + "sum of positive numbers=" + zadanieA(input)[1] + "}");
+        //Zadanie B
         System.out.println(zadanieB(input));
     }
 
-    public static int[] sumZadanieA(int[] input) {
+    public static int[] zadanieA(int[] input) {
         int[] Tab = new int[2];
         int sumaDodatnich = 0;
         int iloscUjemnych = 0;
