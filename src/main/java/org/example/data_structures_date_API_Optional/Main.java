@@ -43,7 +43,7 @@ Metoda powinna wykorzystywać jedną z poznanych struktur danych:
 Tablica/Lista/Set/Mapa - wybierz najlepszą do tego celu
 
 Zadanie D - 1 pkt
-Napisz metodę, która wyświetli informację, ile czasu pozostało do końca kursu (czyli do 11 kwietnia 2021 14:00).
+Napisz metodę, która wyświetli informację, ile czasu pozostało do rozpoczenia olimpiady w Paryzu (czyli do 2 sierpnia 2024 20:00).
 
 Np.:
 
@@ -73,10 +73,13 @@ Metoda powinna wykorzystywać Java 8 Optional.
 
 package org.example.data_structures_date_API_Optional;
 
-import java.util.ArrayList;
+import com.sun.prism.shader.AlphaOne_Color_AlphaTest_Loader;
+import sun.util.resources.LocaleData;
+
+import java.time.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
@@ -90,7 +93,7 @@ public class Main {
         System.out.println("Adam" +" "+ zadanieC("Adam"));
         System.out.println("Jan" + " "+ zadanieC("Jan"));
         //Zadanie D
-
+        zadanieD();
 
     }
 
@@ -151,6 +154,22 @@ public class Main {
             simpleLetter.add(String.valueOf(name.toLowerCase().charAt(i)));
         }
         return simpleLetter.size() != name.length();
+    }
+
+    public static void zadanieD(){
+        LocalDateTime today = LocalDateTime.now();
+        LocalDateTime end = LocalDateTime.of(2024, 8, 2, 20, 00);
+        Duration duration = Duration.between(today, end);
+
+        int day = (int) TimeUnit.SECONDS.toDays(duration.getSeconds());
+        long hours = TimeUnit.SECONDS.toHours(duration.getSeconds()) - (day * 24);
+        long minute = TimeUnit.SECONDS.toMinutes(duration.getSeconds()) - (TimeUnit.SECONDS.toHours(duration.getSeconds()) * 60);
+        long second = TimeUnit.SECONDS.toSeconds(duration.getSeconds()) - (TimeUnit.SECONDS.toMinutes(duration.getSeconds()) * 60);
+
+        System.out.println("do rozpoczenia olimpiady w Paryzu pozostało: " + day + " dni " + hours + " godzin " + minute + " minut " + second + " sekund ");
+
+
+
     }
 }
 
