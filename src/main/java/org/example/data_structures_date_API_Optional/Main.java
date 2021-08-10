@@ -73,12 +73,8 @@ Metoda powinna wykorzystywać Java 8 Optional.
 
 package org.example.data_structures_date_API_Optional;
 
-import com.sun.prism.shader.AlphaOne_Color_AlphaTest_Loader;
-import sun.util.resources.LocaleData;
-
 import java.time.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -94,6 +90,8 @@ public class Main {
         System.out.println("Jan" + " "+ zadanieC("Jan"));
         //Zadanie D
         zadanieD();
+        //Zadanie E
+        zadanieE("Roman");
 
     }
 
@@ -168,10 +166,32 @@ public class Main {
 
         System.out.println("do rozpoczenia olimpiady w Paryzu pozostało: " + day + " dni " + hours + " godzin " + minute + " minut " + second + " sekund ");
 
+    }
+    public static void zadanieE(String name){
+        Map<String, Integer> students = new TreeMap<>();
+        students.put("Andrzej", 5);
+        students.put("Jaroslaw", 1);
+        students.put("Roman", 3);
+        students.put("Lech", 2);
+        students.put("Tomek", null);
 
+        if (!students.containsKey(name)) {
+            System.out.println("Nie znaleziono kursanta o imieniu " + name);
+        } else {
+            Optional<Integer> gradeOptional = getGrade(students, name);
+            if (gradeOptional.isPresent()) {
+                System.out.println(name + "za zadanie domowe otrzymal: " + gradeOptional.get() + " pkt");
+            } else {
+                System.out.println(name + " nie wykonal jeszcze zadania");
+            }
+        }
+    }
 
+    public static Optional<Integer> getGrade(Map<String, Integer> students, String name) {
+        return Optional.ofNullable(students.get(name));
     }
 }
+
 
 
 
